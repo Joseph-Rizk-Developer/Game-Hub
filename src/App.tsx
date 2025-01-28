@@ -10,7 +10,7 @@ import { Genre } from "./hooks/useGenres";
 import { Platform } from "./hooks/usePlatforms";
 
 export interface GameQuery {
-  genre: number | undefined;
+  genreId: number | undefined;
   platformId: number | undefined;
   sortOrder: string;
   searchText: string;
@@ -38,9 +38,9 @@ function App() {
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
           <GenreList
-            selectedGenreId={gameQuery.genre}
+            selectedGenreId={gameQuery.genreId}
             onSelectGenre={(genre) =>
-              setGameQuery({ ...gameQuery, genre: genre.id })
+              setGameQuery({ ...gameQuery, genreId: genre.id })
             }
           />
         </GridItem>
